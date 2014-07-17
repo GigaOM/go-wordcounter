@@ -1,0 +1,16 @@
+.misc-pub-section-last {
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+.giga-word-count {
+	border-bottom: 0;
+}
+#wp-word-count {
+	display: none; /* Hide the built-in word counter to avoid confusion */
+}
+.wordcount-saved-previously {
+	color: #999;
+}
+th.column-giga_wordcount, td.giga_wordcount {
+	width: 60px;
+}
