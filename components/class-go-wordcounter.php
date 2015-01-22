@@ -42,6 +42,8 @@ class GO_WordCounter
 		if ( ! is_object( $post ) )
 			return; // Bail
 
+		$js_min = ( defined( 'GO_DEV' ) && GO_DEV ) ? 'lib' : 'min';
+
 		$wordcountorig = $this->get_word_count( $post->ID );
 		$excerpt_wordcountorig = $this->get_excerpt_word_count( $post->ID );
 
@@ -59,7 +61,7 @@ class GO_WordCounter
 
 		wp_register_style( 'go-wordcounter', plugins_url( 'css/go-wordcounter.css', __FILE__ ), false, '1.0' );
 
-		wp_enqueue_script( 'go-wordcounter', plugins_url( 'js/go-wordcounter.js', __FILE__ ) );
+		wp_enqueue_script( 'go-wordcounter', plugins_url( 'js/' . $js_min . '/go-wordcounter.js', __FILE__ ) );
 		wp_localize_script( 'go-wordcounter', 'go_wordcounter', array( 'text' => $wordcounttext, 'excerpt' => $excerpt_wordcounttext ) );
 	} // end admin_enqueue_scripts
 
